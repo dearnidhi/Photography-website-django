@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+{% if message %}
+<script>
+alert('{{message}}');
+
+</script>
+{% endif %}
+
+  <!-- contact section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section layout_padding">
+    <div class="container ">
+      <div class="">
+        <h2 class="">
+          Get In Touch
+        </h2>
+      </div>
+    </div>
+    
+
+
+    <div class="container">
+      <div class="row">
+          <div class="col-md-6">
+              <form name="sentMessage"method="post">  <!-- Replace 'contact_form_view' with your actual view name -->
+                {% csrf_token %}
+
+                  <div>
+                      <input type="text" placeholder="Name" name="name" />
+                  </div>
+                  <div>
+                      <input type="email" placeholder="Email" name="email" />
+                  </div>
+                  <div>
+                      <input type="text" placeholder="Phone Number" name="number" />
+                  </div>
+                  <div>
+                      <input type="text" class="message-box" placeholder="Message" name="message" />
+                  </div>
+                  <div class="d-flex">
+                      <button type="submit">SEND</button>
+                  </div>
+              </form>
+          </div>
+
+
+
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="/static/images/contact-img.png" alt="">
+            <div class="img_overlay">
+              <h2>
+                Best <br>
+                Photo <br>
+                studio
+              </h2>
+              <a href="">
+                Contact Us
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- end contact section -->
+
+  {% endblock %}
+
+</html>

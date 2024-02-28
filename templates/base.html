@@ -1,0 +1,322 @@
+    <!-- Header -->
+    {% load static %}
+    <!DOCTYPE html>
+
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+  
+    <title>Farhanclickz</title>
+  
+  
+  
+    <!--slick slider stylesheet -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick-theme.min.css">
+  
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+  
+  
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:500|Raleway:400,600,700&display=swap" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  
+    <!-- responsive style -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+  
+  </head>
+  
+  <body>
+    <div class="hero_area">
+  
+      <div class="main slick_main">
+        <div class="slider slider-for main_img-container">
+          <div class="main-img-box b1">
+  
+          </div>
+          <div class="main-img-box b2">
+  
+          </div>
+          <div class="main-img-box b3">
+  
+          </div>
+        </div>
+      </div>
+      
+      <!-- header section strats -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container ">
+            <a href="{% url 'index' %}" class="navbar-brand">
+              <img src="/static/images/1.png" alt="">
+            </a>
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+  
+            <div class="collapse navbar-collapse" id="navbarSupportedContent"style="border-style: solid ; background-color: rgb(238, 243, 248);width: 100%;
+            margin-top: 10px;
+            margin-bottom: 10px;
+            margin-right: 100px;
+            margin-left: 500px;
+            ">
+              <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+                <ul class="navbar-nav  ">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'about' %}"> About</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'portfolio' %}">Portfolio </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'contact' %}">Contact us</a>
+                  </li>
+                  
+                </ul>
+              <!---- <form class="form-inline">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>-->
+              </div>
+            </div>
+          </nav>
+        </div>
+      </header>
+      <!-- end header section -->
+
+      {% block content %}
+      {% endblock %}
+
+<!--footer-->
+<!-- info section -->
+<section class="info_section layout_padding2">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="info-logo">
+            <a href="">
+              <img src="/static/images/1.png"  width="250px" height="70px" alt="">
+            </a>
+            <p>
+              Through the lens, he captures moments that whisper timeless stories, 
+              transforming ordinary scenes into extraordinary tales of light, shadow, and emotion.
+            </p>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 offset-lg-1">
+          <div class="info-nav">
+            <h4>
+              Navigation
+            </h4>
+            <ul>
+              <li class="active">
+                <a href="{% url 'index' %}">
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'about' %}">
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'portfolio' %}">
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="{% url 'contact' %}">
+                  Contact Us
+                </a>
+              </li>
+              
+            </ul>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="info-contact">
+            <h4>
+              Contact Info
+            </h4>
+            <div class="location">
+              <h6>
+                Office Address:
+              </h6>
+              <a href="">
+                <img src="/static/images/location.png" alt="">
+                
+                <span>
+                  # 10, B.M layout  2nd cross,
+                  3rd block venkateshpuram Bangalore
+                  pin-560045                </span>
+              </a>
+            </div>
+            <div class="call">
+              <h6>
+                Customer Service:
+              </h6>
+              <a href="">
+                <img src="/static/images/call.png" alt="">
+                <span>
+                  ( +91 9390897608)
+                </br>
+                ( +91 919390897608)
+
+                </span>
+              </a>
+            </div>
+            <div class="call">
+              <a href="">
+                <img src="/static/images/mail.png" alt="">
+                <span>
+                  munaf1237373@gmail.com
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-2 col-md-3 offset-lg-1">
+          <div class="discover">
+            <h4>
+              Discover
+            </h4>
+            <ul>
+              <li>
+                <a href="#">
+                  Help
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  How It Works
+
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  subscribe
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  Contact Us
+                </a>
+              </li>
+            </ul>
+            <div class="social-box">
+              <a href="https://www.facebook.com/login/" target="=_blank">
+                <img src="/static/images/fb.png" alt="">
+              </a>
+              <a href="#">
+                <img src="/static/images/twitter.png" alt="">
+              </a>
+              <a href="#">
+                <img src="/static/images/insta.png" alt="">
+              </a>
+              <a href="#">
+                <img src="/static/images/linkedin.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div class="info_form">
+        <h4>
+          Subscribe
+        </h4>
+        <form action="">
+          <input type="text" placeholder="Enter your email">
+          <div class="d-flex justify-content-end">
+            <button>
+
+            </button>
+          </div>
+        </form>
+      </div> -->
+    </div>
+  </section>
+
+
+
+  <!-- end info_section -->
+
+
+  <!-- footer section -->
+  <section class="container-fluid footer_section">
+    
+    <p>
+      &copy; Developed By Nidhi
+      
+    </p>
+    
+  </section>
+  <!-- footer section -->
+
+  
+  <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.5.9/slick.min.js"></script>
+
+  <!-- end google map js -->
+
+
+  <script>
+    $('.slider-for').slick({
+      autoplay: true,
+      autoplaySpeed: 3000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      arrows: false,
+      fade: true,
+      asNavFor: '.slider-nav'
+    });
+    $('.slider-nav').slick({
+      slidesToShow: 3,
+      slidesToScroll: 1,
+      asNavFor: '.slider-for',
+      dots: true,
+      centerMode: true,
+      focusOnSelect: true,
+
+    });
+  </script>
+
+  <script>
+    $('.slick-carousel').slick({
+      infinite: true,
+      slidesToShow: 3, // Shows a three slides at a time
+      slidesToScroll: 1, // When you click an arrow, it scrolls 1 slide at a time
+      responsive: [{
+        breakpoint: 768,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 1,
+        }
+      },
+      {
+        breakpoint: 420,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 3,
+        }
+      }
+
+      ]
+    });
+  </script>
+
+</body>
+
+</html>

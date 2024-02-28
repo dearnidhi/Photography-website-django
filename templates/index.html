@@ -1,0 +1,311 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<!DOCTYPE html>
+<html>
+
+<!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="brand_box">
+              <a href="">
+                <img src="/static/images/1.png" alt="" />
+              </a>
+            </div>
+          </div>
+          <div class="col-md-8 px-0">
+            <div class="slider_content ">
+              <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <div class="carousel-indicators-box">
+                  01/
+                  <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+                      01
+                    </li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1">
+                      02
+                    </li>
+                    <li data-target="#carouselExampleIndicators">
+                      03
+                    </li>
+                  </ol>
+                </div>
+
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                    <div class="detail_box">
+                      <h1>
+                        CREATIVE <br />
+                        PHOTOGRAPHY
+                      </h1>
+                      <p>
+                        Photography is the art of freezing moments, painting emotions with light, and telling stories in a single frame.
+                      </p>
+                      <div class="btn-box">
+                        
+                        <a href="{% url 'contact' %}" class="btn-1">Contact</a>
+                        <a href="{% url 'about' %}" class="btn-2">About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item ">
+                    <div class="detail_box">
+                      <h1>
+                        CREATIVE <br />
+                        PHOTOGRAPHY
+                      </h1>
+                      <p>
+                        Photography is the art of freezing moments, painting emotions with light, and telling stories in a single frame.
+
+                      </p>
+                      <div class="btn-box">
+                        <a href="{% url 'contact' %}" class="btn-1">Contact</a>
+                        <a href="{% url 'about' %}" class="btn-2">About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="carousel-item ">
+                    <div class="detail_box">
+                      <h1>
+                        CREATIVE <br />
+                        PHOTOGRAPHY
+                      </h1>
+                      <p>
+                        Photography is the art of freezing moments, painting emotions with light, and telling stories in a single frame.
+
+                      </p>
+                      <div class="btn-box">
+                        <a href="" class="btn-1">Contact</a>
+                        <a href="" class="btn-2">About Us</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="carousel-btn-box">
+                  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="sr-only">Next</span>
+                  </a>
+                </div>
+              </div>
+
+              <div class="img_container">
+                <div class="slider slider-nav slick_slider-nav">
+                  <div class="img-box">
+                    <img src="/static/images/img-1.jpg" alt="">
+                  </div>
+                  <div class="img-box">
+                    <img src="/static/images/img-2.jpg" alt="">
+                  </div>
+                  <div class="img-box">
+                    <img src="/static/images/img-3.jpg" alt="">
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+
+
+  
+  <!-- news section -->
+  <section class="news_section layout_padding">
+    <div class="container">
+        <div class="heading_container" style="border-style: solid; background-color: rgb(238, 243, 248); width: 100%;">
+            <h2>Latest News</h2>
+        </div>
+        <div class="row">
+            {% for news in latest_news %}
+            <div class="col-md-6">
+                <div class="box">
+                    <div class="img-box">
+                        <img src="{{ news.news_image.url }}" alt="{{ news.news_heading }}">
+                    </div>
+                    <div class="detail-box">
+                        <h5>{{ news.news_heading }}</h5>
+                        <p>{{ news.news_description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+  <!-- end news section -->
+  <!-- portfolio section -->
+
+  <section class="portfolio_section layout_padding-top">
+    <div class="container">
+        <div class="heading_container" style="border-style: solid;  background-color: rgb(238, 243, 248); width: 100%;">
+
+        <h2>
+          Our Gallery
+        </h2>
+        
+      </div>
+    </div>
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Portfolio</title>
+      <style>
+          body {
+              font-family: 'Arial', sans-serif;
+              margin: 0;
+              padding: 0;
+          }
+  
+          .portfolio {
+              text-align: center;
+              padding: 50px;
+          }
+  
+          .portfolio-heading {
+              margin-bottom: 30px;
+          }
+  
+          .portfolio-heading h2 {
+              font-size: 2.5em;
+              color: #333;
+          }
+  
+          .portfolio-heading p {
+              color: #666;
+          }
+  
+          .portfolio-grid {
+              display: flex;
+              flex-wrap: wrap;
+              justify-content: space-around;
+          }
+  
+          .portfolio-item {
+              position: relative;
+              margin: 15px;
+              overflow: hidden;
+              width: calc(33.33% - 30px); /* 3 items per row with 30px margin */
+          }
+  
+          .portfolio-item img {
+              width: 100%;
+              height: auto;
+              transition: transform 0.3s ease-in-out;
+          }
+  
+          .portfolio-item:hover img {
+              transform: scale(1.1);
+          }
+  
+          .overlay {
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+              opacity: 0;
+              transition: opacity 0.3s ease-in-out;
+          }
+  
+          .portfolio-item:hover .overlay {
+              opacity: 1;
+          }
+  
+          .overlay a {
+              display: block;
+              margin-bottom: 10px;
+          }
+  
+          .overlay img {
+              width: 30px;
+          }
+  
+          .overlay h6 {
+              margin: 0;
+              font-size: 1.2em;
+              color: #fff;
+          }
+  
+          .about-model {
+              font-size: 0.9em;
+              color: #fff;
+              margin: 5px 0;
+          }
+      </style>
+  </head>
+    <div class="portfolio-grid">
+      {% for gallery in gallery %}
+          <div class="portfolio-item">
+              <img src="{{ gallery.gallery_image.url }}" alt="{{ model.name }}">
+              <div class="overlay">
+                  <a href="{{ gallery.gallery_link }}" target="_blank">
+                      <img src="/static/images/link.png" alt="Link Icon">
+                  </a>
+                  <h6>{{ model.name }}</h6>
+                  <p class="about-model">{{ gallery.gallery_description }}</p>
+              </div>
+          </div>
+      {% endfor %}
+  </div>
+  </section>
+
+  <!-- end portfolio section -->
+  <!-- client section -->
+  <section class="client_section layout_padding">
+    <div class="container">
+        <div class="heading_container" style="border-style: solid; background-color: rgb(251, 252, 253); width: 100%;">
+            <h2>Testimonials</h2>
+        </div>
+        <div class="client_container">
+            <div id="testimonialCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    {% for testimonial in testimonials %}
+                        <div class="carousel-item {% if forloop.first %}active{% endif %}">
+                            <div class="box">
+                                <div class="img-box">
+                                    <img src="{{ testimonial.testimonial_image.url }}" alt="{{ testimonial.testimonial_heading }}">
+                                </div>
+                                <div class="detail-box">
+                                    <h4>{{ testimonial.testimonial_heading }}</h4>
+                                    <p>{{ testimonial.testimonial_description }}</p>
+                                    <img src="/static/images/quote.png" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <a class="carousel-control-prev" href="#testimonialCarousel" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#testimonialCarousel" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+  <!-- end client section -->
+
+
+
+
+
+
+</body>
+{% endblock %}
+
+</html>
